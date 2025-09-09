@@ -16,16 +16,16 @@ lead_dist_bag = select(bag,'Topic','/lead_dist');
 lead_dist = timeseries(lead_dist_bag);
 
 % time t0
-t0 = vel_x.Time(10)
+% t0 = vel_x.Time(10)
 
 %% plot the results
 figure
 hold on
 plot(vel_x)
 % plot(rel_vel)
-scatter(rel_vel.Time(:)-t0,rel_vel.Data(:),marker='.');
+scatter(rel_vel.Time(:),rel_vel.Data(:),marker='.');
 % plot(lead_dist);
-scatter(lead_dist.Time(:)-t0,lead_dist.Data(:),marker='.')
+scatter(lead_dist.Time(:),lead_dist.Data(:),marker='.')
 legend({'vel x (m/s)','rel vel (m/s)','lead dist (m)'})
 ylabel('meters or meters/second')
 xlabel('Unix time in GMT')
