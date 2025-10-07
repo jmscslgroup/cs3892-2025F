@@ -26,10 +26,6 @@ git clone https://github.com/jmscslgroup/profproject
 cd ..
 ```
 Download the example test bagfile from Brightspace: it will be called `hwilexample.bag`. Once it is downloaded, copy the file in and call it `mytest.bag` in your `rossim` folder
-```
-cd ..
-```
-now you are back in your `rossim` folder
 
 ```
 cp ../somewhere/else/hwilexample.bag mytest.bag
