@@ -35,7 +35,7 @@ cp ../somewhere/else/hwilexample.bag mytest.bag
 Make sure you are in your `rossim` folder
 
 ```
-docker run --mount type=bind,source=.,target=/ros/catkin_ws -it rosempty
+docker run --mount type=bind,source=.,target=/ros/catkin_ws -it sprinkjm/rosempty
 ```
 
 Now, inside of your docker container, compile your Ros catkin workspace. Your cwd should be `/ros/catkin_ws`
