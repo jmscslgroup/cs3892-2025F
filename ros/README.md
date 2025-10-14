@@ -22,7 +22,7 @@ cd rossim/src
 git clone https://github.com/jmscslgroup/subtractor
 git clone https://github.com/jmscslgroup/odometer
 git clone https://github.com/jmscslgroup/carsimplesimulink
-git clone https://github.com/jmscslgroup/profproject
+git clone https://github.com/jmscslgroup/profacc
 cd ..
 ```
 Download the example test bagfile from Brightspace: it will be called `hwilexample.bag`. Once it is downloaded, copy the file in and call it `mytest.bag` in your `rossim` folder
@@ -150,10 +150,19 @@ Hit space to toggle paused, or 's' to step.
  ---
  data: 0.0
  ---
+```
+
+That's because the car doesn't move for awhile. Let's start the rosbag playback when the car starts to move! If you use the MATLAB plotting function, it will show you when that happens.
  
- ```
+# run a giant simulation
  
- That's because the car doesn't move for awhile. Let's start the rosbag playback when the car starts to move! If you use the MATLAB plotting function, it will show you that happens about 
+From the profacc, the following
+
+```
+cd /ros/catkin_ws
+source devel/setup.bash
+roslaunch profacc profacc_docker.launch
+```
 
 # Useful git repositories for simulation
 
@@ -162,6 +171,6 @@ Learn about these and other useful repositories using the links below.
 * https://github.com/jmscslgroup/cs3891proj2023
 * https://github.com/jmscslgroup/subtractor
 * https://github.com/jmscslgroup/odometer
-* https://github.com/jmscslgroup/profproject
+* https://github.com/jmscslgroup/profacc
 * https://github.com/jmscslgroup/carsimplesimulink
 
