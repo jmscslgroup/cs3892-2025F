@@ -1,5 +1,6 @@
 % choose your file!
 filename='../../hwilexample.bag';
+% filename='../../2025_06_18_12_55_42_2T3MWRFVXLW056972cbf_codegen_test.bag';
 bag = rosbag(filename);
 
 
