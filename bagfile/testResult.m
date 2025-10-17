@@ -35,16 +35,16 @@ ego_odom = timeseries(ego_odom_bag);
 
 
 % time t0
-% t0 = vel_x.Time(10)
+t0 = vel_x.Time(1);
 
 %% plot the results
 figure
 hold on
-plot(vel_x)
+scatter(vel_x.Time(:)-t0, vel_x.Data(:),marker='.')
 % plot(rel_vel)
-scatter(rel_vel.Time(:),rel_vel.Data(:),marker='.');
+scatter(rel_vel.Time(:)-t0,rel_vel.Data(:),marker='.');
 % plot(lead_dist);
-scatter(lead_dist.Time(:),lead_dist.Data(:),marker='.')
+scatter(lead_dist.Time(:)-t0,lead_dist.Data(:),marker='.')
 legend({'vel x (m/s)','rel vel (m/s)','lead dist (m)'})
 ylabel('meters or meters/second')
 xlabel('Unix time in GMT')
@@ -55,14 +55,16 @@ fontsize(gcf,"scale",2.5)
 %% plot the odometry
 figure
 hold on
-scatter(lead_odom.Time(:),lead_odom.Data(:),marker='.');
-scatter(ego_odom.Time(:),ego_odom.Data(:),marker='.')
+scatter(lead_odom.Time(:)-t0,lead_odom.Data(:),marker='.');
+scatter(ego_odom.Time(:)-t0,ego_odom.Data(:),marker='.')
 legend({'lead odom (m)','ego odom (m)'})
 ylabel('meters')
 xlabel('Unix time in GMT')
 title('Speed, Relative Velocity, and Relative Distance')
 axis equal
 fontsize(gcf,"scale",2.5)
+
+% pause
 
 %% now, replay!
 figure

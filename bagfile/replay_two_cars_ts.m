@@ -151,8 +151,8 @@ else
 end
 
 % Initial placement
-set(T1, 'Matrix', makehgtform('translate',[x1u(1) y1 0]));
-set(T2, 'Matrix', makehgtform('translate',[x2u(1) y2 0]));
+set(T1, 'Matrix', makehgtform('translate',[x1u(1) + L/2, y1, 0]));  % lead car: odom = rear axle
+set(T2, 'Matrix', makehgtform('translate',[x2u(1) - L/2, y2, 0]));  % ego car: odom = front axle
 update_labels(1);
 
 % ---- Axis padding & min/max span rules ----
@@ -171,8 +171,8 @@ xlim(axPlay, [egoX0 - span0/2, egoX0 + span0/2]);
 N = numel(tu);
 for k = 1:N
     % Update car poses & labels
-    set(T1, 'Matrix', makehgtform('translate',[x1u(k) y1 0]));
-    set(T2, 'Matrix', makehgtform('translate',[x2u(k) y2 0]));
+    set(T1, 'Matrix', makehgtform('translate',[x1u(k) + L/2, y1, 0]));
+    set(T2, 'Matrix', makehgtform('translate',[x2u(k) - L/2, y2, 0]));
     update_labels(k);
 
     % Trails
