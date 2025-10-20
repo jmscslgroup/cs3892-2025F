@@ -1,7 +1,7 @@
 % choose your file!
-filename=uigetfile('*.bag');
+[fileName, pathName] = uigetfile('*.bag');
 
-bag = rosbag(filename);
+bag = rosbag([pathName, fileName]);
 
 
 %% extract the x velocity information
