@@ -22,6 +22,7 @@ cd rossim/src
 git clone https://github.com/jmscslgroup/subtractor
 git clone https://github.com/jmscslgroup/odometer
 git clone https://github.com/jmscslgroup/carsimplesimulink
+git clone https://github.com/jmscslgroup/carcomplexsimulink
 git clone https://github.com/jmscslgroup/profacc
 cd ..
 ```
@@ -160,6 +161,10 @@ source devel/setup.bash
 roslaunch profacc profacc_docker.launch
 ```
 
+You should see an output file that is named something like profacc_2025-10-16-02-53-23.bag (date and time will vary). Note that the date/time will be in UTC and not your local timezone.
+
+When you've completed this, plot it using some of the MATLAB routines that are in the bagfiles folder; `testResult.m` is one that will also play an animation of the cars.
+
 # Useful git repositories for simulation
 
 Learn about these and other useful repositories using the links below.
@@ -169,4 +174,5 @@ Learn about these and other useful repositories using the links below.
 * https://github.com/jmscslgroup/odometer
 * https://github.com/jmscslgroup/profacc
 * https://github.com/jmscslgroup/carsimplesimulink
+* https://github.com/jmscslgroup/carcomplexsimulink
 
